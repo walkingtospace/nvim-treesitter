@@ -22,6 +22,8 @@ function! nvim_treesitter#available_query_groups(arglead, cmdline, cursorpos) ab
   return join(luaeval("require'nvim-treesitter.query'.available_query_groups()"), "\n")
 endfunction
 
-function! nvim_treesitter#indent() abort
-	return luaeval(printf('require"nvim-treesitter.indent".get_indent(%d)', v:lnum))
+" Add missing file
+function! nvim_treesitter#get_parser_configs(arglead, cmdline, cursorpos) abort
+  return join(luaeval("require'nvim-treesitter.configs'.get_parser_configs()"), "\n")
+endfunctionindent".get_indent(%d)', v:lnum))
 endfunction
